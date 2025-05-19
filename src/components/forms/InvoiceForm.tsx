@@ -1,37 +1,48 @@
 import useCustomers from "../../hooks/useCustomers"
 import DropDown from "../ui/DropDown"
-import { useFormStore, useShowListStore } from "../../store";
+import { useFormStore, usePopupStore, useShowListStore } from "../../store";
 import LineItems from "../ui/LineItems";
 
 const InvoiceForm = () => {
     const { customers } = useCustomers();  
     const form = useFormStore(state => state.form);
     const resetForm = useFormStore(state => state.resetForm);
-
     const lineItems = useFormStore(state => state.form.line_items)
     const {setShowList} = useShowListStore(state => state);
+    const setPopup = usePopupStore(state => state.setPopup);
+    
 
 
       async function createInvoice(){
-      try {
-            console.log(form);
-            
-          const request = await fetch('https://order-manager-api-yz7t.onrender.com/api/invoice', {
-            method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(form)
-          })
-
-          const data = await request.json();
-          console.log(data);
+        if(form.line_items.length > 0){
+          try {
+              await fetch('https://order-manager-api-yz7t.onrender.com/api/invoice', {
+                method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(form)
+              })
+              setPopup({
+                    message: `Invoice create`,
+                    success: true
+              })
           
-      } catch (error) {
-          console.error('Error Getting Customers: ', error);
+              } catch (error) {
+                  console.error('Error Getting Customers: ', error);
+                  setPopup({
+                    message: `Problem creating invoice, please check your connection`,
+                    success: false
+              })
           
-      }
-
+                  
+              }
+          }else {
+            setPopup({
+              message: "No items included",
+              success: false
+            })
+          }
     } 
 
 

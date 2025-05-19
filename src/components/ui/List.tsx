@@ -10,11 +10,11 @@ function List() {
 
     return (
     <div 
-      className="w-full absolute bg-gray-50 h-[80dvh] bottom-0  rounded-md overflow-hidden transition-all duration-200 ease-in-out"
+      className="w-full absolute bg-gray-50 h-[70%] bottom-0 overflow-hidden transition-all duration-200 ease-in- z-100"
       style={{
         transform: showList ? 'scaleY(1)' : 'scaleY(0)',
         transformOrigin: 'bottom', 
-        boxShadow: '-2px 3px 8px',
+        boxShadow: '-1px 2px 4px',
       }}
       >
         

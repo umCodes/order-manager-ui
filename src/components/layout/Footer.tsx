@@ -13,6 +13,7 @@ const Footer = () => {
         border border-gray-200 
         bg-white 
         pb-4
+        z-10
         ">
         <nav className="flex items-center">
             <button 

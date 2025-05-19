@@ -29,6 +29,18 @@ type ShowListStore = {
 
 }
 
+type Popup = {
+    message: string;
+    success: boolean;
+}
+type PopupStore = {
+    popup: Popup;
+    setPopup: (popup: Popup) => void;
+
+
+}
+
+
 type VoidyFunction = () => void;
 
 type UseNavigate = {
@@ -116,4 +128,18 @@ export const useNavigate = create<UseNavigate>((set) => ({
         }))
     }
     
+}))
+
+
+export const usePopupStore = create<PopupStore>((set) => ({
+    popup: {
+        message: "",
+        success: true
+    },
+    
+    setPopup: (popup) => {
+        set(() => ({
+            popup: popup,
+        }))
+    }
 }))

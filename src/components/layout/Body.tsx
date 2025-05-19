@@ -1,6 +1,7 @@
 import CreateInvoice from "../../pages/CreateInvoice"
 import Drafts from "../../pages/Drafts"
 import { useNavigate } from "../../store"
+import Popup from "../ui/Popup";
 
 const Body = () => {
     const location = useNavigate((state) => state.location);
@@ -17,6 +18,8 @@ const Body = () => {
             }}>
                 <Drafts />
             </div>
+
+            <Popup/>
         </div>
     )
 }
