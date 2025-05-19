@@ -4,6 +4,7 @@ export type LineItem = {
     unit: string;
     quantity: number;
     rate: number;
+    description: string;   
 
 }
 

@@ -16,7 +16,8 @@ const ListItem = ({item}: ListItemProp) => {
     item_name: item.item_name,
     unit: item.unit,
     quantity: 1,
-    rate: item.rate
+    rate: item.rate,
+    description: item.description
   }
 
   const  setLineItems = useFormStore(state => state.setLineItems)
@@ -47,7 +48,7 @@ const ListItem = ({item}: ListItemProp) => {
           onClick={toggleExpand}
 
         >
-          <h3 className="font-bold text-lg">
+          <h3 className="font-bold text-md">
               {item && item.item_name}
           </h3>
           <p>
@@ -58,9 +59,9 @@ const ListItem = ({item}: ListItemProp) => {
         </div>
 
         <form onSubmit={e => e.preventDefault()}
-        className="bg-gray-100  transition-all duration-200 overflow-hidden"
+        className="bg-gray-100  transition-all duration-200 overflow-hidden flex flex-col justify-center"
           style={{
-            height: expand? '160px' :'0',
+            height: expand? '240px' :'0',
             padding: expand? '8px' :'0'
           }}
         >
@@ -84,6 +85,17 @@ const ListItem = ({item}: ListItemProp) => {
               type="number" 
               id="quantity" 
               className="bg-white text-lg text-center border border-gray-400 rounded w-16 p-1" 
+              
+              />
+          </div>
+          <div className="m-2 flex justify-between font-bold text-gray-700">
+            <label htmlFor="description">Description: </label>
+            <input 
+              value={formItem.description} 
+              onChange={e => setFormItem({...formItem, description: e.target.value}) }   
+              type="text" 
+              id="description" 
+              className="bg-white text-lg border border-gray-400 rounded w-46 p-1" 
               
               />
           </div>
