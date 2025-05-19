@@ -31,25 +31,22 @@ export default defineConfig({
             purpose: 'any maskable'
           }  
          ]
+      },
+      workbox: {
+        runtimeCaching: [{
+          urlPattern: ({url}: { url: URL }) => {
+            return url.pathname.startsWith('/api/items');
+          },
+          handler: "CacheFirst" as const,
+          options: {
+            cacheName: "api-cache",
+            cacheableResponse:{
+              statuses: [0, 200]
+            }
+          }
+        }]
       }
     })
 
   ],
 })
-
-
-// ,
-//       workbox: {
-//         runtimeCaching: [{
-//           urlPattern: ({url}: { url: URL }) => {
-//             return url.pathname.startsWith('/api');
-//           },
-//           handler: "CacheFirst" as const,
-//           options: {
-//             cacheName: "api-cache",
-//             cacheableResponse:{
-//               statuses: [0, 200]
-//             }
-//           }
-//         }]
-//       }
