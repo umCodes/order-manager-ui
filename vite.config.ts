@@ -35,7 +35,7 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [{
           urlPattern: ({url}) => {
-            return url.href.includes('/api')
+            return new URL(url.href).pathname.startsWith('/api');
           },
           handler: "CacheFirst" as const,
           options: {
