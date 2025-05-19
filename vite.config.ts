@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import {VitePWA} from 'vite-plugin-pwa'
 // https://vite.dev/config/
+
+
+const repoName = 'order-manager-ui';
+
 export default defineConfig({
    server: {
     host: true, // <-- allow access from LAN
