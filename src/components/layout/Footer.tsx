@@ -6,12 +6,13 @@ const Footer = () => {
   const {location, setCreateInvoice, setDrafts} = useNavigate((state) => state);
   
 
-  const buttonStyle = "p-3 flex flex-col w-full m-1 border"
+  const buttonStyle = "p-3 flex flex-col w-full m-1 border items-center justify-center"
   return (
     <div className="
         items-center
         border border-gray-200 
         bg-white 
+        pb-4
         ">
         <nav className="flex items-center">
             <button 
