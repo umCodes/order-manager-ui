@@ -8,6 +8,7 @@ import {VitePWA} from 'vite-plugin-pwa'
 const repoName = 'order-manager-ui';
 
 export default defineConfig({
+  base: `${repoName}`,
    server: {
     host: true, // <-- allow access from LAN
   },
