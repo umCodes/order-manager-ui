@@ -19,6 +19,7 @@ type FormStore = {
     setCustomerId: (id: string) => void;
     setLineItems: (item: LineItem) => void;
     removeLineItem: (item: LineItem) => void;
+    resetForm: () => void;
 };
 
 type ShowListStore = {
@@ -36,11 +37,13 @@ type UseNavigate = {
     setDrafts: VoidyFunction;
 }
 
-export const useFormStore = create<FormStore>((set) =>({
-    form: {
+const defaultForm = {
         customer_id: '',
         line_items: []
-    },
+    } 
+
+export const useFormStore = create<FormStore>((set) =>({
+    form: defaultForm,
     setCustomerId: (id) => {
         set((state) => ({
             form:{
@@ -70,7 +73,19 @@ export const useFormStore = create<FormStore>((set) =>({
 
 
     
+    },
+
+    resetForm: () =>{
+
+        set(() => ({
+            form: defaultForm
+        }))
+
+
+    
     }
+
+
 
 }));
 

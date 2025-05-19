@@ -6,6 +6,7 @@ import LineItems from "../ui/LineItems";
 const InvoiceForm = () => {
     const { customers } = useCustomers();  
     const form = useFormStore(state => state.form);
+    const resetForm = useFormStore(state => state.resetForm);
 
     const lineItems = useFormStore(state => state.form.line_items)
     const {setShowList} = useShowListStore(state => state);
@@ -60,7 +61,10 @@ const InvoiceForm = () => {
             <button 
                 className='p-2 px-12 bg-blue-500 text-xl text-white rounded m-auto cursor-pointer'
                 
-                onClick={async() => await createInvoice()}
+                onClick={async() =>{ 
+                  await createInvoice()
+                  resetForm();
+                }}
             >
                 Submit
             </button>
