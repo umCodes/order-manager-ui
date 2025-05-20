@@ -2,17 +2,17 @@ import { useEffect, useState } from "react"
 import { usePopupStore } from "../../store";
 
 const Popup = () => {
-  const [position, setPosition] = useState('0');
+  const [show, setShow] = useState(false);
   const popup = usePopupStore(state => state.popup);
 
   useEffect(()=>{
     if(popup.message){
           setTimeout(()=> {
-            setPosition('10%')
+            setShow(true)
           }, 1000);
 
           setTimeout(()=> {
-            setPosition('0')
+            setShow(false)
           }, 4000);
     }
   },[popup])
@@ -33,7 +33,8 @@ const Popup = () => {
     "
     style={{
         backgroundColor: popup.success ? '#3B82F6': '#ff424f',
-        bottom: position,
+        bottom: show? '10%': '0',
+        opacity: show? '1' : '0'
         }}
     >
         {popup.message}
