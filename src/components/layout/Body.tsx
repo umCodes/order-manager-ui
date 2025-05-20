@@ -7,7 +7,7 @@ const Body = () => {
     const location = useNavigate((state) => state.location);
 
     return (
-        <div className="overflow-x-scroll bg-gray-50">
+        <div className="overflow-x-scroll bg-gray-100">
             <div style={{
                 display: location === "createInvoice" ? '' : 'none'
             }}>

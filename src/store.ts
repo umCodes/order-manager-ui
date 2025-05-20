@@ -18,7 +18,7 @@ type FormStore = {
     }
     setCustomerId: (id: string) => void;
     setLineItems: (item: LineItem) => void;
-    removeLineItem: (item: LineItem) => void;
+    removeLineItem: (item: LineItem, index: number) => void;
     resetForm: () => void;
 };
 
@@ -74,12 +74,12 @@ export const useFormStore = create<FormStore>((set) =>({
         }))
     },
 
-    removeLineItem: (item) =>{
+    removeLineItem: (item, index) =>{
 
         set((state) => ({
             form:{
                 ...state.form,
-                line_items:  [...state.form.line_items].filter(i => i.item_id !== item.item_id)
+                line_items:  [...state.form.line_items].filter((el, i) => ((el.item_id + i) !== item.item_id + index))
             }
         }))
 

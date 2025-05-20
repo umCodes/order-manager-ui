@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useFormStore, type LineItem } from "../../store"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 
-const AddedItem = ({item}: {item: LineItem}) => {
+const AddedItem = ({item, index}: {item: LineItem, index: number}) => {
     const removeLineItem = useFormStore(state => state.removeLineItem)
 
 
@@ -19,7 +19,7 @@ const AddedItem = ({item}: {item: LineItem}) => {
             </p>
             </div>
             <button 
-                onClick={() => removeLineItem(item)}
+                onClick={() => removeLineItem(item, index)}
                 className='m-auto text-lg text-red-500 p-4'>
                 <FontAwesomeIcon icon={faTrash}/>
             </button>

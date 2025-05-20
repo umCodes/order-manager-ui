@@ -20,9 +20,9 @@ function List() {
         
 
       <div className="flex items-center justify-between p-4 ">
-      <h3 className="text-2xl text-gray-700 font-bold">Items</h3>
+      <h3 className="text-2xl text-gray-800 font-bold">Items</h3>
       <button
-        className="text-lg text-blue-500"
+        className="text-lg text-blue-700"
         onClick={() => {
             setShowList(false);
         }}
@@ -31,7 +31,7 @@ function List() {
       </button>
       </div>
         <div 
-          className='overflow-y-scroll h-[90%]'
+          className='overflow-y-scroll h-[90%]  pb-16'
         >
           {items && 
           items.map((item: Item) => 

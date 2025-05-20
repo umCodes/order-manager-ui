@@ -42,7 +42,7 @@ const DropDown = <T,>({options, label, IDLabel}: DropDownProp<T>) => {
     <div 
         className='absolute bg-white flex flex-col overflow-y-scroll transition-all h-fit w-full'
         style={{
-            maxHeight: expand ? '200px' : '0',
+            maxHeight: expand ? '280px' : '0',
         }}
     >
         {options && options.map((option) => {

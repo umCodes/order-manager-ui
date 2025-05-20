@@ -44,11 +44,11 @@ const ListItem = ({item}: ListItemProp) => {
       className="m-2"
       >
         <div
-          className="flex items-center justify-between shadow rounded-t-md p-4 bg-white border border-gray-200 cursor-pointer hover:bg-gray-50"
+          className="flex items-center justify-between rounded-t-md p-4 bg-white border border-gray-200 cursor-pointer active:bg-gray-50"
           onClick={toggleExpand}
 
         >
-          <h3 className="font-bold text-md">
+          <h3 className="font-semibold text-md">
               {item && item.item_name}
           </h3>
           <p>
@@ -65,7 +65,7 @@ const ListItem = ({item}: ListItemProp) => {
             padding: expand? '8px' :'0'
           }}
         >
-          <div className="m-2 flex justify-between font-bold text-gray-700">
+          <div className="m-2 flex justify-between  text-gray-700">
             <label htmlFor="rate">Rate: </label>
             <input 
               value={formItem.rate} 
@@ -77,7 +77,7 @@ const ListItem = ({item}: ListItemProp) => {
             />
 
           </div>
-          <div className="m-2 flex justify-between font-bold text-gray-700">
+          <div className="m-2 flex justify-between text-gray-700">
             <label htmlFor="quantity">Quantity: </label>
             <input 
               value={formItem.quantity} 
@@ -88,7 +88,7 @@ const ListItem = ({item}: ListItemProp) => {
               
               />
           </div>
-          <div className="m-2 flex justify-between font-bold text-gray-700">
+          <div className="m-2 flex justify-between text-gray-700">
             <label htmlFor="description">Description: </label>
             <input 
               value={formItem.description} 

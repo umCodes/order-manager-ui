@@ -7,7 +7,7 @@ const Header = () => {
     <div className="
         flex items-center 
         border border-gray-200 
-      bg-white 
+      bg-gray-50 
         text-2xl text-gray-700 font-bold 
         p-2"
         >

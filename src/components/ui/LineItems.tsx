@@ -7,7 +7,7 @@ const LineItems = ({lineItems}: {lineItems: LineItem[]}) => {
     <span className="p-2 text-gray-500 font-semibold">{lineItems.length} Items</span>  
     <div className="bg-white border-2 border-gray-200 rounded-lg my-4"> 
           <div>
-            {lineItems && lineItems.map(item => <AddedItem item={item} key={item.item_id + '01'}/>)}
+            {lineItems && lineItems.map((item, i) => <AddedItem index={i} item={item} key={item.item_id + '01'}/>)}
             
             {lineItems.length > 0 && 
               <div className='border-t border-gray-300 m-4 p-4 flex items-center justify-between'>

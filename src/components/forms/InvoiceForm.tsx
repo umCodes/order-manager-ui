@@ -2,6 +2,7 @@ import useCustomers from "../../hooks/useCustomers"
 import DropDown from "../ui/DropDown"
 import { useFormStore, usePopupStore, useShowListStore } from "../../store";
 import LineItems from "../ui/LineItems";
+import { useState } from "react";
 
 const InvoiceForm = () => {
     const { customers } = useCustomers();  
@@ -10,11 +11,12 @@ const InvoiceForm = () => {
     const lineItems = useFormStore(state => state.form.line_items)
     const {setShowList} = useShowListStore(state => state);
     const setPopup = usePopupStore(state => state.setPopup);
-    
+    const [submiting, setSubmiting] = useState(false);    
 
 
       async function createInvoice(){
         if(form.line_items.length > 0){
+          setSubmiting(true)
           try {
               await fetch('https://order-manager-api-yz7t.onrender.com/api/invoice', {
                 method: 'POST',
@@ -43,6 +45,8 @@ const InvoiceForm = () => {
               success: false
             })
           }
+
+          setSubmiting(false)
     } 
 
 
@@ -56,7 +60,9 @@ const InvoiceForm = () => {
             />
         <div className='flex'>
             <button 
-                className='p-2 px-4 bg-blue-500 text-lg text-white rounded m-2 ml-auto cursor-pointer'
+                className='p-2 px-4                text-lg text-blue-600 underline
+                active:text-blue-700
+                ml-auto cursor-pointer'
                 onClick={()=> setShowList(true)}
             >
               Add Item
@@ -70,14 +76,16 @@ const InvoiceForm = () => {
         </div>
         <div className="flex">
             <button 
-                className='p-2 px-12 bg-blue-500 text-xl text-white rounded m-auto cursor-pointer'
+                className='w-70 h-12 px-6  bg-blue-600 active:bg-blue-700 text-xl text-white rounded-lg m-auto cursor-pointer'
                 
                 onClick={async() =>{ 
                   await createInvoice()
                   resetForm();
                 }}
             >
-                Submit
+                
+                {submiting ? <p className="text-gray-200 animate-pulse">Submiting...</p>: "Submit" }
+                
             </button>
         </div>
 
