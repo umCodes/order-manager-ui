@@ -61,18 +61,18 @@ const InvoiceForm = () => {
             />
         <div className='flex items-center justify-between px-2'>
 
-            <div>
+        
 
-            <label>
+            <label className='flex items-center justify-between'>
                 <input 
                     type="checkbox"
                     checked={form.forToday}
                     onChange={toggleForToday}
                 />
-                <p className="px-2">For Today</p>
+                <span p className="px-2">For Today</span>
             </label>
 
-            </div>
+        
                 
             
             <button 
