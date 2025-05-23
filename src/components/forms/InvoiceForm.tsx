@@ -8,6 +8,7 @@ const InvoiceForm = () => {
     const { customers } = useCustomers();  
     const form = useFormStore(state => state.form);
     const resetForm = useFormStore(state => state.resetForm);
+    const toggleForToday = useFormStore(state => state.resetForm.toggleForToday);
     const lineItems = useFormStore(state => state.form.line_items)
     const {setShowList} = useShowListStore(state => state);
     const setPopup = usePopupStore(state => state.setPopup);
@@ -59,10 +60,26 @@ const InvoiceForm = () => {
                 IDLabel={'contact_id'}
             />
         <div className='flex'>
+
+            <div>
+
+            <label>
+                <input 
+                    type="checkbox"
+                    checked={form.forToday}
+                    onChange={toggleForToday}
+                />
+                For Today
+            </label>
+
+            </div>
+                
+            
             <button 
-                className='p-2 px-4                text-lg text-blue-600 underline
-                active:text-blue-700
-                ml-auto cursor-pointer'
+                className='p-2 px-4                
+                            text-lg text-blue-600 underline
+                            active:text-blue-700
+                            ml-auto cursor-pointer'
                 onClick={()=> setShowList(true)}
             >
               Add Item
