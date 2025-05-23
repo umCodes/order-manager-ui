@@ -59,7 +59,7 @@ const InvoiceForm = () => {
                 label={'customer_name'}
                 IDLabel={'contact_id'}
             />
-        <div className='flex'>
+        <div className='flex items-center justify-between px-2'>
 
             <div>
 
