@@ -69,7 +69,7 @@ const InvoiceForm = () => {
                     checked={form.forToday}
                     onChange={toggleForToday}
                 />
-                For Today
+                <p className="px-2">For Today</p>
             </label>
 
             </div>
