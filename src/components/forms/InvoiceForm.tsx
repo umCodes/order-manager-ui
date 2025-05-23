@@ -63,14 +63,14 @@ const InvoiceForm = () => {
 
         
 
-            <label className='flex items-center justify-between border'>
+            <div className='flex items-center justify-between border'>
                 <input 
                     type="checkbox"
                     checked={form.forToday}
                     onChange={toggleForToday}
                 />
                 <span p className="px-2">For Today</span>
-            </label>
+            </div>
 
         
                 
