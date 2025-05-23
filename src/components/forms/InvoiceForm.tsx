@@ -63,7 +63,7 @@ const InvoiceForm = () => {
 
         
 
-            <label className='flex items-center justify-between'>
+            <label className='flex items-center justify-between border'>
                 <input 
                     type="checkbox"
                     checked={form.forToday}
