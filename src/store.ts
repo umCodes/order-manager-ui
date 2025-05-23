@@ -21,6 +21,7 @@ type FormStore = {
     setLineItems: (item: LineItem) => void;
     removeLineItem: (item: LineItem, index: number) => void;
     resetForm: () => void;
+    toggleForToday: () => void;
 };
 
 type ShowListStore = {
@@ -72,6 +73,15 @@ export const useFormStore = create<FormStore>((set) =>({
             form:{
                 ...state.form,
                 line_items:  [...state.form.line_items, item]
+            }
+        }))
+    },
+    toggleForToday: () =>{
+
+        set((state) => ({
+            form:{
+                ...state.form,
+                forToday: !state.form.forToday
             }
         }))
     },
