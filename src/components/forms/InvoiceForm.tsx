@@ -8,7 +8,7 @@ const InvoiceForm = () => {
     const { customers } = useCustomers();  
     const form = useFormStore(state => state.form);
     const resetForm = useFormStore(state => state.resetForm);
-    const toggleForToday = useFormStore(state => state.resetForm.toggleForToday);
+    const toggleForToday = useFormStore(state => state.toggleForToday);
     const lineItems = useFormStore(state => state.form.line_items)
     const {setShowList} = useShowListStore(state => state);
     const setPopup = usePopupStore(state => state.setPopup);
