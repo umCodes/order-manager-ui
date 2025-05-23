@@ -15,6 +15,7 @@ type FormStore = {
     form: {
         customer_id: string; 
         line_items: LineItem[];
+        forToday: boolean;
     }
     setCustomerId: (id: string) => void;
     setLineItems: (item: LineItem) => void;
@@ -51,7 +52,8 @@ type UseNavigate = {
 
 const defaultForm = {
         customer_id: '',
-        line_items: []
+        line_items: [],
+        forToday: false
     } 
 
 export const useFormStore = create<FormStore>((set) =>({
