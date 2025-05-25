@@ -12,6 +12,7 @@ export type FormStore = {
     form: {
         customer_id: string; 
         line_items: LineItem[];
+        forToday: boolean;
     }
     setCustomerId: (id: string) => void;
     setLineItems: (item: LineItem) => void;
