@@ -12,10 +12,6 @@ interface PaymentInput {
   invoices: Invoice[];
 }
 
-
-
-
-
 export async function addPayment({
   customer_id,
   payment_mode,
@@ -23,13 +19,15 @@ export async function addPayment({
   date,
   reference_number,
   invoices
-}: PaymentInput){
-
-    try {
+}: PaymentInput) {
+  try {
     const response = await fetch(
       `https://order-manager-api-yz7t.onrender.com/api/add-payment`,
       {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json' // ✅ Missing in your version
+        },
         body: JSON.stringify({
           customer_id,
           payment_mode,
@@ -50,9 +48,6 @@ export async function addPayment({
     return data;
   } catch (error) {
     console.error('Error submitting payment:', error);
-    throw error; // rethrow if you want calling code to handle it
+    throw error;
   }
-}
-
-
 }
