@@ -19,6 +19,9 @@ const DraftCard = ({draft}: {draft: Draft}) => {
                         SAR{draft.total}
                     </span>
                 </div>
+                <button>
+                      add payment
+                 </button>
         </div>)
 }
 
