@@ -46,15 +46,12 @@ const InvoiceForm = () => {
                     message: `Problem creating invoice, please check your connection`,
                     success: false
               })
-              return;
-                  
               }
           }else {
             setPopup({
               message: "No items included",
               success: false
             })
-          return;
           }
 
           setSubmiting(false)
