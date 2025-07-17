@@ -16,7 +16,15 @@ const InvoiceForm = () => {
 
 
       async function createInvoice(){
-        if(form.line_items.length > 0){
+        if(!form.customer_id){
+              setPopup({
+                    message: `Customer not Provided`,
+                    success: false
+              });            
+            return;
+        }
+          
+          if(form.line_items.length > 0){
           setSubmiting(true)
           try {
               await fetch('https://order-manager-api-yz7t.onrender.com/api/invoice', {
@@ -30,14 +38,15 @@ const InvoiceForm = () => {
                     message: `Invoice create`,
                     success: true
               })
-          
+               resetForm();
+              return;
               } catch (error) {
                   console.error('Error Getting Customers: ', error);
                   setPopup({
                     message: `Problem creating invoice, please check your connection`,
                     success: false
               })
-          
+              return;
                   
               }
           }else {
@@ -45,6 +54,7 @@ const InvoiceForm = () => {
               message: "No items included",
               success: false
             })
+          return;
           }
 
           setSubmiting(false)
@@ -97,7 +107,6 @@ const InvoiceForm = () => {
                 
                 onClick={async() =>{ 
                   await createInvoice()
-                  resetForm();
                 }}
             >
                 
