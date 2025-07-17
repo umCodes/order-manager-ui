@@ -38,7 +38,7 @@ const DraftCard = ({draft}: {draft: Draft}) => {
                     </p>
                 </div>
 
-                <div>                
+                <div className="mx-2 ml-auto">                
                     <span className="font-bold">
                         SAR{draft.total}
                     </span>
