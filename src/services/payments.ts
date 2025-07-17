@@ -1,8 +1,5 @@
 import type { Draft } from "../hooks/useDrafts";
-interface Invoice {
-  invoice_id: string;
-  amount_applied: number;
-}
+
 
 export async function addPayment(draft: Draft) {
   try {
