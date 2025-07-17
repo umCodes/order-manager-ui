@@ -7,6 +7,8 @@ export type Draft = {
     total: number;
     invoice_number: string;
     date: string;
+    customer_id: string; 
+    invoice_id: string;
 }
 
 function useDrafts() {
