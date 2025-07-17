@@ -24,7 +24,7 @@ function Drafts() {
          {loading ? <div className="flex 
          text-xl text-gray-400 font-semibold 
          items-center justify-center">Loading...</div> : 
-         drafts.length > 0 ? drafts.map(draft => <DraftCard draft={draft} key={draft.invoice_number}/>) :  <div className="flex 
+         drafts.length > 0 ? drafts.map(draft => <DraftCard draft={draft} setLoading={setLoading} key={draft.invoice_number}/>) :  <div className="flex 
          text-xl text-gray-400 font-semibold 
          items-center justify-center">No Drafts Created Yet</div>
         }    
