@@ -24,35 +24,35 @@ const InvoiceForm = () => {
             return;
         }
           
-          if(form.line_items.length > 0){
+          if(!form.line_items.length){
+              setPopup({
+              message: "No items included",
+              success: false
+            })
+              return;
+          }
           setSubmiting(true)
           try {
               await fetch('https://order-manager-api-yz7t.onrender.com/api/invoice', {
-                method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(form)
-              })
-              setPopup({
-                    message: `Invoice create`,
-                    success: true
-              })
-               resetForm();
-              return;
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(form)
+                  })
+                    setPopup({
+                        message: `Invoice create`,
+                        success: true
+                    })
+                   resetForm();
               } catch (error) {
                   console.error('Error Getting Customers: ', error);
                   setPopup({
                     message: `Problem creating invoice, please check your connection`,
                     success: false
-              })
+                  })
               }
-          }else {
-            setPopup({
-              message: "No items included",
-              success: false
-            })
-          }
+          
 
           setSubmiting(false)
     } 
