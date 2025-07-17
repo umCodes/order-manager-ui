@@ -30,8 +30,11 @@ const DraftCard = ({draft}: {draft: Draft}) => {
             <div className="flex items-center justify-between border-2 border-gray-200 m-3 p-2 rounded-md bg-white">
                 <div>                
                     <h3 className="text-lg font-bold">{draft.customer_name}</h3>
-                    <p className="text-gray-700">
-                        <span className="font-semibold ">{draft.invoice_number}</span> - {draft.date}
+                    <p className="font-semibold">
+                        {draft.invoice_number}
+                    </p>
+                    <p className="text-gray-700 ">
+                      {draft.date}
                     </p>
                 </div>
 
@@ -42,7 +45,7 @@ const DraftCard = ({draft}: {draft: Draft}) => {
                 </div>
               <button
                 onDoubleClick={handleDraftPayment}
-                className="ml-4 p-2 text-sm text-green-700 hover:text-green-900 transition-colors"
+                className="cursor-pointer ml-4 p-2 text-sm text-green-700 hover:text-green-900 transition-colors"
                 title="Add Payment"
               >
                 <FontAwesomeIcon icon={faMoneyBillWave} size="lg" />
