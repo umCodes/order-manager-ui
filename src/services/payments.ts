@@ -4,15 +4,6 @@ interface Invoice {
   amount_applied: number;
 }
 
-interface PaymentInput {
-  customer_id: string;
-  payment_mode: string;
-  amount: number;
-  date: string;
-  reference_number: string;
-  invoices: Invoice[];
-}
-
 export async function addPayment(draft: Draft) {
   try {
     const response = await fetch('https://order-manager-api-yz7t.onrender.com/api/add-payment', {
