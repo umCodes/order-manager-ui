@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from '../store';
+
 
 interface Item {
   item_id: string;
@@ -11,8 +11,7 @@ interface Item {
 function RequiredItems() {
   const [items, setItems] = useState<Item[]>([]);
   const [loading, setLoading] = useState(true);
-  const location = useNavigate((state) => state.location);
-
+  
   useEffect(() => {
     
       fetch('https://order-manager-api-yz7t.onrender.com/api/draftitems')
