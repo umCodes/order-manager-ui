@@ -14,7 +14,7 @@ function RequiredItems() {
   const location = useNavigate((state) => state.location);
 
   useEffect(() => {
-    if (location === "required items") {
+    
       fetch('https://order-manager-api-yz7t.onrender.com/api/draftitems')
         .then((res) => res.json())
         .then((data: Item[]) => {
@@ -25,8 +25,8 @@ function RequiredItems() {
           console.error('Error fetching items:', err);
           setLoading(false);
         });
-    }
-  }, [location]);
+    
+  }, []);
 
   if (loading) {
     return (
