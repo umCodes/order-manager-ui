@@ -33,7 +33,7 @@ function RequiredItems() {
   }
 
   return (
-    <div className="h-full overflow-y-auto p-4">
+    <div className="overflow-y-auto p-4 h-fit">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {items.map((item) => (
           <div
