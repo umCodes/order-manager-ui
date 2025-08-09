@@ -16,6 +16,7 @@ function RequiredItems() {
       .then((res) => res.json())
       .then((data: Item[]) => {
         setItems(data);
+        console.log(data);
         setLoading(false);
       })
       .catch((err) => {
