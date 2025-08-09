@@ -26,26 +26,21 @@ function RequiredItems() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-full">
-        <p className="text-lg text-gray-600">Loading items...</p>
+      <div>
+        <p>Loading items...</p>
       </div>
     );
   }
 
   return (
-    <div className="overflow-y-auto p-4 h-fit">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {items.map((item) => (
-          <div
-            key={item.item_id}
-            className="border border-gray-200 rounded-lg p-4 shadow bg-white"
-          >
-            <h2 className="text-xl font-bold text-gray-900 mb-1">{item.description}</h2>
-            <p className="text-sm text-gray-600 mb-2">{item.name}</p>
-            <p className="text-sm text-gray-500">Quantity: {item.quantity}</p>
-          </div>
-        ))}
-      </div>
+    <div>
+      {items.map((item) => (
+        <div key={item.item_id}>
+          <h2>{item.description}</h2>
+          <p>{item.name}</p>
+          <p>Quantity: {item.quantity}</p>
+        </div>
+      ))}
     </div>
   );
 }
