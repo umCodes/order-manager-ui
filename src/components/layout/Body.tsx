@@ -2,6 +2,7 @@ import CreateInvoice from "../../pages/CreateInvoice"
 import Drafts from "../../pages/Drafts"
 import { useNavigate } from "../../store"
 import Popup from "../ui/Popup";
+import RequiredItems from "../../pages/RequiredItems";
 
 const Body = () => {
     const location = useNavigate((state) => state.location);
@@ -18,7 +19,11 @@ const Body = () => {
             }}>
                 <Drafts />
             </div>
-
+            <div style={{
+                display: location === "requiredItems" ? '' : 'none'
+            }}>
+                <RequiredItems />
+            </div>
             <Popup/>
         </div>
     )
