@@ -132,21 +132,21 @@ export const useNavigate = create<UseNavigate>((set) => ({
     
     setCreateInvoice: () =>{
         set(() =>({
-                location: "createInvoice",   
+            location: "createInvoice",   
         }))
     },
 
     setDrafts: () =>{
         set(() =>({
-                location: "drafts",   
+            location: "drafts",   
         }))
     },
-    setRequiredItems: () => {             // <-- Implement this
-            set(() => ({
-                location: "requiredItems",
-            }));
 
-    
+    setRequiredItems: () => {
+        set(() => ({
+            location: "requiredItems",
+        }));
+    }
     
 }))
 
