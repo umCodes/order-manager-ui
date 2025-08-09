@@ -29,7 +29,7 @@ function RequiredItems() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center">
         <p className="text-lg text-gray-600">Loading items...</p>
       </div>
     );
