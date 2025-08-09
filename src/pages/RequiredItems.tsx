@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 interface Item {
-  item_id: string;
+  id: string;
   name: string;
   description: string;
   quantity: number;
@@ -36,7 +36,7 @@ function RequiredItems() {
   return (
     <div>
       {items.map((item) => (
-        <div key={item.item_id}>
+        <div key={item.id}>
           <h2>{item.description}</h2>
           <p>{item.name}</p>
           <p>Quantity: {item.quantity}</p>
