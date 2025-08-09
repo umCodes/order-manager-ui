@@ -49,6 +49,7 @@ type UseNavigate = {
     location: string;
     setCreateInvoice: VoidyFunction;
     setDrafts: VoidyFunction;
+    setRequiredItems: VoidyFunction; 
 }
 
 const defaultForm = {
@@ -76,6 +77,7 @@ export const useFormStore = create<FormStore>((set) =>({
             }
         }))
     },
+
     toggleForToday: () =>{
 
         set((state) => ({
@@ -138,7 +140,13 @@ export const useNavigate = create<UseNavigate>((set) => ({
         set(() =>({
                 location: "drafts",   
         }))
-    }
+    },
+    setRequiredItems: () => {             // <-- Implement this
+            set(() => ({
+                location: "requiredItems",
+            }));
+
+    
     
 }))
 
