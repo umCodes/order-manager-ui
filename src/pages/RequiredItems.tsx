@@ -14,7 +14,7 @@ function RequiredItems() {
   useEffect(() => {
     fetch('https://order-manager-api-yz7t.onrender.com/api/draftitems')
       .then((res) => res.json())
-      .then((data: Item[]) => {
+      .then((data: {items: Item[]}) => {
         setItems(data.items);
         console.log(data);
         setLoading(false);
