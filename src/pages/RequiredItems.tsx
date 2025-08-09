@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 
 function RequiredItems() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const location = useNavigate((state) => state.location);
+  
   useEffect(() => {
+    
+    if(location === "required items")
     fetch('https://order-manager-api-yz7t.onrender.com/api/draftitems')
       .then((res) => res.json())
       .then((data) => {
@@ -15,7 +19,8 @@ function RequiredItems() {
         console.error('Error fetching items:', err);
         setLoading(false);
       });
-  }, []);
+
+  }, [location]);
 
   if (loading) {
     return (
