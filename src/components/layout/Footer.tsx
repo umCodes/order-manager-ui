@@ -18,7 +18,6 @@ const Footer = () => {
           onClick={setCreateInvoice}
         >
           <FontAwesomeIcon icon={faReceipt}/>
-          Create Invoices
         </button>
 
         <button               
@@ -29,7 +28,6 @@ const Footer = () => {
           onClick={setDrafts}
         >
           <FontAwesomeIcon icon={faClock}/>
-          Drafts
         </button>
 
         <button               
@@ -40,7 +38,6 @@ const Footer = () => {
           onClick={setRequiredItems}
         >
           <FontAwesomeIcon icon={faClipboardList}/>
-          Required Items
         </button>
       </nav>
     </div>
