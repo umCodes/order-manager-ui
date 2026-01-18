@@ -8,7 +8,7 @@ function useCustomers() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`${VITE_API_URL}/api/customers`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/customers`)
       .then((res) => res.json())
       .then((data) => {
         setCustomers(data)
