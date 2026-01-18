@@ -8,7 +8,7 @@ function useCustomers() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://order-manager-api-yz7t.onrender.com/api/customers')
+    fetch('`${VITE_API_URL}/api/customers`)
       .then((res) => res.json())
       .then((data) => {
         setCustomers(data)
