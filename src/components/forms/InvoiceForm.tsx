@@ -33,7 +33,7 @@ const InvoiceForm = () => {
           }
           setSubmiting(true)
           try {
-              await fetch(`${VITE_API_URL}/api/invoice`, {
+              await fetch(`${import.meta.env.VITE_API_URL}/api/invoice`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
