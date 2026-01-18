@@ -8,7 +8,7 @@ function useItems() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`${VITE_API_URL}/api/items`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/items`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data)
