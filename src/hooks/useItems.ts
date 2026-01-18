@@ -8,7 +8,7 @@ function useItems() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://order-manager-api-yz7t.onrender.com/api/items')
+    fetch(`${VITE_API_URL}/api/items`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data)
