@@ -12,7 +12,7 @@ function RequiredItems() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://order-manager-api-yz7t.onrender.com/api/draftitems')
+    fetch(`${VITE_API_URL}/api/draftitems`)
       .then((res) => res.json())
       .then((data: { items: Item[] }) => {
         setItems(data.items);
