@@ -18,7 +18,7 @@ function useDrafts() {
   
 
   useEffect(() => {
-    fetch('https://order-manager-api-yz7t.onrender.com/api/invoices')
+    fetch(`${VITE_API_URL}/api/invoices`)
             .then((res) => res.json())
             .then((data) => {
                 setDrafts(data)        
