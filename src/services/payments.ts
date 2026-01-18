@@ -3,7 +3,7 @@ import type { Draft } from "../hooks/useDrafts";
 
 export async function addPayment(draft: Draft) {
   try {
-    const response = await fetch('https://order-manager-api-yz7t.onrender.com/api/add-payment', {
+    const response = await fetch(`${VITE_API_URL}/api/add-payment`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
