@@ -12,7 +12,7 @@ function RequiredItems() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${VITE_API_URL}/api/draftitems`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/draftitems`)
       .then((res) => res.json())
       .then((data: { items: Item[] }) => {
         setItems(data.items);
