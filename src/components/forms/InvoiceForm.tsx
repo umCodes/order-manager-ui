@@ -33,7 +33,7 @@ const InvoiceForm = () => {
           }
           setSubmiting(true)
           try {
-              await fetch('https://order-manager-api-yz7t.onrender.com/api/invoice', {
+              await fetch(`${VITE_API_URL}/api/invoice`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
