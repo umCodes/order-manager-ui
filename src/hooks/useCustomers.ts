@@ -10,8 +10,8 @@ function useCustomers() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/customers`)
       .then((res) => res.json())
-      .then((data) => {
-        setCustomers(data)
+      .then(({customers}) => {
+        setCustomers(customers)
         setLoading(false)
       })
   }, [])

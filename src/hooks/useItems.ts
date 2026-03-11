@@ -10,8 +10,8 @@ function useItems() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/items`)
       .then((res) => res.json())
-      .then((data) => {
-        setItems(data)
+      .then(({items}) => {
+        setItems(items)
         setLoading(false)
       })
   }, [])

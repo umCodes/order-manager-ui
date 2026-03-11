@@ -2,12 +2,13 @@ import ListItem from "./ListItem";
 import useItems from "../../hooks/useItems";
 import type { Item } from "../../types/types";
 import { useShowListStore } from "../../store";
+import { useEffect } from "react";
 
 function List() {
     const {items} = useItems();
     const {showList, setShowList} = useShowListStore(state => state);
 
-
+    useEffect(() => console.log(items) , [items])
     return (
     <div 
       className="w-full absolute bg-gray-50 h-[70%] bottom-0 overflow-hidden transition-all duration-200 ease-in- z-100"
