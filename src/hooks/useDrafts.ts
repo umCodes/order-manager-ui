@@ -20,8 +20,8 @@ function useDrafts() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/invoices`)
             .then((res) => res.json())
-            .then(({drafts}) => {
-                setDrafts(drafts)        
+            .then((data) => {
+                setDrafts(data.drafts)        
                 setLoading(false)
 
             })

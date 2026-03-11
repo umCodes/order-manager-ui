@@ -14,8 +14,9 @@ function RequiredItems() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/draftitems`)
       .then((res) => res.json())
-      .then(({items}) => {
-        setItems(items);
+      .then((data) => {
+        setItems(data.items);
+        console.log(data);
         setLoading(false);
       })
       .catch((err) => {
